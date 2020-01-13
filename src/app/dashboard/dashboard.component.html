@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>
+        <button class="btn btn-primary mr-3" (click)="add()">Dodaj</button>
+        <button class="btn btn-primary mr-3" (click)="remove()">Odstrani</button>
+        <button class="btn btn-primary mr-3" (click)="random=!random">Posodobi random</button>
+      </p>
+      <p>
+        <button class="btn btn-primary mr-3" (click)="update(false)">Posodobi vse na prvem</button>
+        <button class="btn btn-primary mr-3" (click)="update(true)">Zamenjaj vse na drugem</button>
+        <button class="btn btn-primary mr-3" (click)="changeRef()">Posodobi array referenco</button>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <app-grid [array]="items" [randomInput]="random"></app-grid>
+    </div>
+    <div class="col-sm-6">
+      <app-grid-op [array]="items" [randomInput]="random"></app-grid-op>
+    </div>
+    <div class="col-sm-6">
+      <app-grid-track-by [array]="items" [randomInput]="random"></app-grid-track-by>
+    </div>
+    <div class="col-sm-6">
+      <app-grid-track-by-op [array]="items" [randomInput]="random"></app-grid-track-by-op>
+    </div>
+  </div>
+</div>
