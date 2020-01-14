@@ -11,6 +11,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { GridTrackByComponent } from './grid-track-by/grid-track-by.component';
 import { GridTrackByOpComponent } from './grid-track-by-op/grid-track-by-op.component';
 import { ItemOpComponent } from './item-op/item-op.component';
+import { EditItemComponent } from './edit-item/edit-item.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { EditItemOpComponent } from './edit-item-op/edit-item-op.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,15 @@ import { ItemOpComponent } from './item-op/item-op.component';
     DashboardComponent,
     GridTrackByComponent,
     GridTrackByOpComponent,
-    ItemOpComponent
+    ItemOpComponent,
+    EditItemComponent,
+    EditItemOpComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

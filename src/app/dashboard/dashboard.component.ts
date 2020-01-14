@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements OnInit {
 
@@ -24,8 +25,12 @@ export class DashboardComponent implements OnInit {
     this.items.push({company: 'A' + (++this.counter), contact: 'B' + this.counter});
   }
 
-  remove() {
-    this.items.pop();
+  remove(first: boolean = false) {
+    if (first) {
+      return this.items.shift();
+    } else {
+      return this.items.pop();
+    }
   }
 
   update(replace: boolean) {

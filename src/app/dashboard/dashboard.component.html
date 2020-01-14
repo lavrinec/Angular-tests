@@ -4,6 +4,7 @@
       <p>
         <button class="btn btn-primary mr-3" (click)="add()">Dodaj</button>
         <button class="btn btn-primary mr-3" (click)="remove()">Odstrani</button>
+        <button class="btn btn-primary mr-3" (click)="remove(true)">Odstrani prvega</button>
         <button class="btn btn-primary mr-3" (click)="random=!random">Posodobi random</button>
       </p>
       <p>
@@ -25,6 +26,14 @@
     </div>
     <div class="col-sm-6">
       <app-grid-track-by-op [array]="items" [randomInput]="random"></app-grid-track-by-op>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <app-edit-item [item]="items[2]"></app-edit-item>
+    </div>
+    <div class="col-sm-6">
+      <app-edit-item-op [item]="items[2]"></app-edit-item-op>
     </div>
   </div>
 </div>
