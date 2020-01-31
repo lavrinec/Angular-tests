@@ -9,9 +9,9 @@
   </tr>
   <ng-container *ngIf="trackBy">
     <tr *ngFor="let item of array;trackBy: trackByFn">
-      <td>{{ item.company }}</td>
-      <td><app-item [item]="item.company"></app-item></td>
-      <td><app-item-op [item]="item.company"></app-item-op></td>
+<!--      <td>{{ item.company }}</td>-->
+<!--      <td><app-item [item]="item.company"></app-item></td>-->
+<!--      <td><app-item-op [item]="item.company"></app-item-op></td>-->
       <td><app-item-object [item]="item"></app-item-object></td>
       <td>{{ item.contact }}</td>
     </tr>
@@ -20,8 +20,8 @@
     <tr *ngFor="let item of array">
       <td>{{ item.company }}</td>
       <td><app-item [item]="item.company"></app-item></td>
-      <td><app-item-op [item]="item.company"></app-item-op></td>
-      <td><app-item-object [item]="item"></app-item-object></td>
+<!--      <td><app-item-op [item]="item.company"></app-item-op></td>-->
+<!--      <td><app-item-object [item]="item"></app-item-object></td>-->
       <td>{{ item.contact }}</td>
     </tr>
   </ng-container>

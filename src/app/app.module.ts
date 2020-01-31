@@ -14,6 +14,9 @@ import { ItemOpComponent } from './item-op/item-op.component';
 import { EditItemComponent } from './edit-item/edit-item.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EditItemOpComponent } from './edit-item-op/edit-item-op.component';
+import { GridOpAnnotationComponent } from './grid-op-annotation/grid-op-annotation.component';
+import { GridOpAnnotationCheckComponent } from './grid-op-annotation-check/grid-op-annotation-check.component';
+import { SomeComponent } from './some/some.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { EditItemOpComponent } from './edit-item-op/edit-item-op.component';
     GridTrackByOpComponent,
     ItemOpComponent,
     EditItemComponent,
-    EditItemOpComponent
+    EditItemOpComponent,
+    GridOpAnnotationComponent,
+    GridOpAnnotationCheckComponent,
+    SomeComponent
   ],
   imports: [
     BrowserModule,

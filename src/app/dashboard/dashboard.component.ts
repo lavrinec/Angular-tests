@@ -8,13 +8,23 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  public items = [
+  private defaultItem = {company: 'Bla bla', contact: 'Blu blu'};
+  private _items = [
     {company: 'Init 1', contact: 'Init'},
     {company: 'Init 2', contact: 'Init'},
     {company: 'Init 3', contact: 'Init'},
+    this.defaultItem,
   ];
+  get items() {
+    console.log('Get');
+    return this._items;
+  }
+  set items(items) {
+    this._items = items;
+  }
   public counter = 0;
   public random = true;
+  public inside = false;
 
   constructor() { }
 
@@ -46,6 +56,17 @@ export class DashboardComponent implements OnInit {
   }
 
   changeRef() {
-    this.items = [...this.items];
+    this.items = JSON.parse(JSON.stringify(this.items));
+    // this.items[0].company = 'LOL';
+    delete this.items[3];
+    this.defaultItem.company = 'AAA';
+    this.items[3] = this.defaultItem;
+    // this.items = [...this.items];
+  }
+
+  itemChange(item: any, number: number) {
+    console.log(item);
+    this.items = [ ... this.items ];
+    this.items[number] = item;
   }
 }

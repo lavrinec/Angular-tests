@@ -19,7 +19,7 @@ export class GridTrackByOpComponent implements OnInit {
 
   trackByFn(index, item) {
     console.log('tbfop', index)
-    return index; // or item.id
+    return item.company; // or item.id
   }
 
 }
