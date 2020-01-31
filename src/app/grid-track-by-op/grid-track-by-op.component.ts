@@ -1,25 +1,22 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-grid-track-by-op',
   templateUrl: '../grid/grid.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridTrackByOpComponent implements OnInit {
-
   @Input() array: any[];
   @Input() randomInput: boolean;
   public type = 'Track By On Push';
   public trackBy = true;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   trackByFn(index, item) {
-    console.log('tbfop', index)
+    console.log('tbfop', index);
     return item.company; // or item.id
   }
-
 }

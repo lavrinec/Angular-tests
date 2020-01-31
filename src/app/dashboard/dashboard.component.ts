@@ -1,18 +1,17 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent implements OnInit {
-
-  private defaultItem = {company: 'Bla bla', contact: 'Blu blu'};
+  private defaultItem = { company: 'Bla bla', contact: 'Blu blu' };
   private _items = [
-    {company: 'Init 1', contact: 'Init'},
-    {company: 'Init 2', contact: 'Init'},
-    {company: 'Init 3', contact: 'Init'},
+    { company: 'Init 1', contact: 'Init' },
+    { company: 'Init 2', contact: 'Init' },
+    { company: 'Init 3', contact: 'Init' },
     this.defaultItem,
   ];
   get items() {
@@ -26,13 +25,12 @@ export class DashboardComponent implements OnInit {
   public random = true;
   public inside = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   add() {
-    this.items.push({company: 'A' + (++this.counter), contact: 'B' + this.counter});
+    this.items.push({ company: 'A' + ++this.counter, contact: 'B' + this.counter });
   }
 
   remove(first: boolean = false) {
@@ -47,7 +45,7 @@ export class DashboardComponent implements OnInit {
     const position = Number(replace);
     if (this.items[position]) {
       if (replace) {
-        this.items[position] = {company: 'Total change', contact: 'B' + Date.now()};
+        this.items[position] = { company: 'Total change', contact: 'B' + Date.now() };
       } else {
         this.items[position].company = 'Value change';
         this.items[position].contact = 'B' + Date.now();
@@ -64,9 +62,9 @@ export class DashboardComponent implements OnInit {
     // this.items = [...this.items];
   }
 
-  itemChange(item: any, number: number) {
+  itemChange(item: any, index: number) {
     console.log(item);
-    this.items = [ ... this.items ];
-    this.items[number] = item;
+    this.items = [...this.items];
+    this.items[index] = item;
   }
 }

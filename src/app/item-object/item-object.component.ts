@@ -1,16 +1,16 @@
-import {ChangeDetectionStrategy, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import { ChangeDetectionStrategy, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
+/* tslint:disable */
 @Component({
   selector: 'app-item-object',
   templateUrl: './item-object.component.html',
   styleUrls: ['./item-object.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ItemObjectComponent implements OnInit, OnDestroy, OnChanges, DoCheck {
-
   @Input() item;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     console.log('IO on init');
@@ -28,9 +28,8 @@ export class ItemObjectComponent implements OnInit, OnDestroy, OnChanges, DoChec
     console.log('IO do check');
   }
 
-  fun(){
+  fun() {
     console.log('FUN', this.item.company);
     return this.item.company;
   }
-
 }
